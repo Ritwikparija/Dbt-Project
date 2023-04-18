@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from {{ source('Side_shop', 'Customers') }} /* Case sensitive Source_name*/
+    from  {{ source('Side_shop', 'Customers') }} 
 )
 
 select * from customers;
