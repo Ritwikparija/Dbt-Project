@@ -1,12 +1,10 @@
-with orders as (
-    
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
+with
+    orders as (
 
-    from DBT_raw.side_shop.orders
-)
+        select id as order_id, user_id as customer_id, order_date, status
 
-select * from orders
+        from {{ source('Side_shop', 'Orders') }}   
+         )
+
+select *
+from orders

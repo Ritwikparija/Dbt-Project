@@ -2,7 +2,7 @@
   config(
     materialized='table'
   )
-}}*/
+}}
 
 
 with customers as (
@@ -50,3 +50,5 @@ final as (
 )
 
 select * from final
+
+*/

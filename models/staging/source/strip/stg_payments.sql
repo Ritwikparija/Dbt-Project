@@ -8,4 +8,4 @@ select
     amount / 100 as amount,
     created as created_at
 
-from dbt_raw.strip.payments
+from {{ source("strip", "payments") }}

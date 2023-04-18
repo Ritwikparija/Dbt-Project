@@ -5,7 +5,8 @@ with customers as (
         first_name,
         last_name
 
-    from dbt_raw.side_shop.customers
+    from {{ source('Side_shop', 'Customers') }} /* Case sensitive Source_name*/
 )
 
-select * from customers
+select * from customers;
+

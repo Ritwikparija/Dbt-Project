@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: Side_shop #<Source_name>,#<Case Sensitive                   >
+    database: dbt_raw  #<Database name>
+    schema: Side_shop #<Schema name>  
+    tables:           #<Table_name>
+      - name: Orders
+      - name: Customers
+
+  - name: strip
+    tables:
+      - name: payments
