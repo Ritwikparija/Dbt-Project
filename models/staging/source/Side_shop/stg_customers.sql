@@ -1,4 +1,4 @@
-with customers as (
+
     
     select 
         id as customer_id,
@@ -6,7 +6,6 @@ with customers as (
         last_name
 
     from  {{ source('Side_shop', 'Customers') }} 
-)
 
-select * from customers;
+
 

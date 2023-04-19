@@ -1,13 +1,13 @@
 version: 2
 
 sources:
-  - name: Side_shop #<Source_name>,#<Case Sensitive                   >
+  - name: Side_shop #<Source_name>,#<Case Sensitive>
     database: dbt_raw  #<Database name>
     schema: Side_shop #<Schema name>  
     tables:           #<Table_name>
       - name: Orders
       - name: Customers
-
-  - name: strip
-    tables:
-      - name: payments
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
